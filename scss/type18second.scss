@@ -50,3 +50,45 @@
 //     }
 // }
 
+#hd{
+    a{
+        text-decoration: none;
+    }
+    .gnb{
+        .d1{
+            //대메뉴 li
+
+            &:hover{
+                //대메뉴 롤오버시 소메뉴 노출
+                ul{
+                    display: block;
+                }
+            }
+            .gnb_d1_a{
+                //대메뉴
+               font-size: 1.2em;
+               color:black;
+            }
+              
+      
+            ul{
+                //소메뉴
+                display: none;
+                min-width: 80px;
+                white-space: nowrap;
+                color: white;
+                &.leftul{
+                    left: -2rem;
+                }
+                
+              
+                li{
+                    a{
+                       font-size: 0.85rem;
+                       color: white;
+                    }
+                }
+            }
+        }  
+    }
+}
