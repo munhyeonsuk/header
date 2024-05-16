@@ -46,7 +46,11 @@
         height: 0;
         overflow: hidden;
         transition: 0.5s;
-
-
+        &::before,
+        &::after{
+            content: "";
+            display: block;
+            height: 16px;
+        }
     }
 }
