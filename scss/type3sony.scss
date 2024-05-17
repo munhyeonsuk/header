@@ -1,85 +1,222 @@
-#hd{
-    a{
-        text-decoration: none;
-        color: black;
-    }
+// a{
+//     text-decoration: none;
+//     color: black;
+// }
+// #hd{
+//     h1,
+//     .iconMenu{
+//         width:0;
+//     }
+//     h1{
+//         a{
+//             white-space: nowrap;
+            
+//         }
+//     }
+//     .gnb {
+//         .gnb_li{
+//             &:hover{
+//                 .gnb_a {
+//                     color:red; //활성화
+//                 }
+//                 .gnb_ul{
+//                     max-height: 180px;
+//                     border-radius: 0  0  30px 30px;
+//                 }
 
+//             }
+//             .gnb_a {
+//                 font-size: 1.2rem;
+//             }
+            
+//             .gnb_ul{
+//                 min-width:10rem;
+//                 // padding: 0 1.5rem;
+//                 background-color: white;
+//                 margin-top: -1px;
+//                 border:1px solid #ccc;
+//                 border-top:0;
+//                 border-bottom: 0;
+//                 border-radius: 0;
+//                 overflow: hidden;
+//                 // 모든 소메뉴 대메뉴를 기준으로 정가운데로
+//                 transform: translateX(-50%);
+//                 left: 50%;
+//                 //드롭애니메이션
+//                 max-height: 0;
+//                 overflow: hidden;
+//                 transition:  0.5s;
+//                 transition-delay: 1s;
+
+//                 &:after,
+//                 &:before{
+//                     content: "";
+//                     display: block;
+//                     height: 1rem;
+//                 }
+//                 &:after{
+//                     border-bottom:1px solid #ccc;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+
+
+
+
+// #hd{
+//     a{
+//         text-decoration: none;
+//         color: black;
+//     }
+
+//     h1,
+//     .iconMenu{
+//         width: 0;
+//     }
+//     h1{
+//         a{
+//             white-space: nowrap;
+//         }
+//     }
+//     .gnb{//대메뉴ul
+//         .gnb_li{//대메뉴li
+//             &:hover{
+//                 .gnb_a{
+//                     color: red; //활성화
+//                 }
+//                 .gnb_ul{
+//                     max-height: 180px;// 각각의 소메뉴 사이즈가 달라서 height로 진행불가
+//                     border-bottom: 1px solid black;
+//                     animation: slideDown 0.5s ease-out forwards, roundCorners 0.5s ease-out 0.5s forwards;
+//                     }
+//                 }
+//             }
+//             .gnb_a{
+//                 font-size: 1.2rem;
+//             }
+//             .gnb_ul{//소메뉴ul
+//                 min-width: 10rem;
+//                 background-color: white;
+//                 margin-top: -1px;
+//                 border: 1px solid black;
+//                 border-top: 0;
+//                 border-bottom: 0;
+//                 overflow: hidden;
+//                 //모든 소메뉴 대메뉴를 기준으로 정가운데로 엄마를 기준으로 절만만큼 왼쪽으로 가고 너의 몸을 기준으로 절반만큼 뒤로: 가운데 정렬
+//                 transform: translateX(-50%);
+//                 left: 50%;
+//                 //드롭애니메이션
+//                 max-height: 0;
+//                 transition: 0.5s;
+//                 //transition-delay: 1s;
+                
+                
+//                 li{
+//                     padding: 0 1.5rem;
+//                 }
+
+//                 &:after,
+//                 &:before{
+//                     content: "";
+//                     display: block;
+//                     height: 1rem;
+//                 }
+//                 &:after{
+                   
+                    
+                    
+//                 }
+//             }
+//         }
+        
+//     }
+
+// @keyframes slideDown {
+//     from {
+//         max-height: 0;
+//     }
+//     to {
+//         max-height: 180px;
+//     }
+// }
+// @keyframes roundCorners {
+//     from {
+//         border-radius: 0;
+//     }
+//     to {
+//         border-bottom-left-radius: 30px;
+//         border-bottom-right-radius: 30px;
+//     }
+// }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+#hd{
+    position: relative;
     h1,
     .iconMenu{
-        width: 0;
+        width:0;
     }
     h1{
         a{
             white-space: nowrap;
         }
     }
-    .gnb{//대메뉴ul
-        .gnb_li{//대메뉴li
-            &:hover{
-                .gnb_a{
-                    color: red; //활성화
-                }
-                .gnb_ul{
-                    max-height: 180px;// 각각의 소메뉴 사이즈가 달라서 height로 진행불가
-                    border-bottom: 1px solid black;
-                    animation: slideDown 0.5s ease-out forwards, roundCorners 0.5s ease-out 0.5s forwards;
+    .gnb {
+        &:before{
+            content: "";
+            position: absolute;
+            left:0; right:0;
+            top:100%;
+            height:0;
+            transition: 0.5s;
+            background-color: rgba(255,255,255,.8);
+        }
+        &:hover{
+            &:before{
+                height:180px;
+            }
+            .gnb_li{
+                &:hover{
+                    .gnb_a {
+                        color:red; //활성화
                     }
                 }
+                .gnb_ul{
+                    height:180px;
+                }
             }
-            .gnb_a{
+        }
+        .gnb_li{
+            padding: 15px 35px !important;
+            .gnb_a {
                 font-size: 1.2rem;
             }
-            .gnb_ul{//소메뉴ul
-                min-width: 10rem;
-                background-color: white;
-                margin-top: -1px;
-                border: 1px solid black;
-                border-top: 0;
-                border-bottom: 0;
+            .gnb_ul{
+                min-width:12rem;
                 overflow: hidden;
-                //모든 소메뉴 대메뉴를 기준으로 정가운데로 엄마를 기준으로 절만만큼 왼쪽으로 가고 너의 몸을 기준으로 절반만큼 뒤로: 가운데 정렬
-                transform: translateX(-50%);
-                left: 50%;
-                //드롭애니메이션
-                max-height: 0;
-                transition: 0.5s;
-                //transition-delay: 1s;
-                
-                
-                li{
-                    padding: 0 1.5rem;
-                }
-
+                height: 0;
+                transition:  0.5s;
+                left:-15px;
+                text-align: center;
                 &:after,
                 &:before{
                     content: "";
                     display: block;
                     height: 1rem;
                 }
-                &:after{
-                   
-                    
-                    
+            li:hover{
+                a{
+                    color: red;
                 }
             }
+            }
         }
-        
-    }
-
-@keyframes slideDown {
-    from {
-        max-height: 0;
-    }
-    to {
-        max-height: 180px;
-    }
-}
-@keyframes roundCorners {
-    from {
-        border-radius: 0;
-    }
-    to {
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
     }
 }
