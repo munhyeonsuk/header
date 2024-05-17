@@ -14,7 +14,8 @@
 }
 #hd .gnb .gnb_li:hover .gnb_ul {
   max-height: 180px;
-  border-radius: 0 0 30px 30px;
+  border-bottom: 1px solid black;
+  animation: slideDown 0.5s ease-out forwards, roundCorners 0.5s ease-out 0.5s forwards;
 }
 #hd .gnb .gnb_a {
   font-size: 1.2rem;
@@ -26,14 +27,11 @@
   border: 1px solid black;
   border-top: 0;
   border-bottom: 0;
-  border-radius: 0;
   overflow: hidden;
   transform: translateX(-50%);
   left: 50%;
   max-height: 0;
-  overflow: hidden;
   transition: 0.5s;
-  transition-delay: 1s;
 }
 #hd .gnb .gnb_ul li {
   padding: 0 1.5rem;
@@ -43,6 +41,20 @@
   display: block;
   height: 1rem;
 }
-#hd .gnb .gnb_ul:after {
-  border-bottom: 1px solid black;
+@keyframes slideDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 180px;
+  }
+}
+@keyframes roundCorners {
+  from {
+    border-radius: 0;
+  }
+  to {
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
 }
