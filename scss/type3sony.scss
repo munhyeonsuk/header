@@ -1,4 +1,9 @@
 #hd{
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
     h1,
     .iconMenu{
         width: 0;
@@ -8,4 +13,57 @@
             white-space: nowrap;
         }
     }
-}
+    .gnb{
+        .gnb_li{
+            &:hover{
+                .gnb_a{
+                    color: red; //활성화
+                }
+                .gnb_ul{
+                    max-height: 180px;// 각각의 소메뉴 사이즈가 달라서 height로 진행불가
+                    border-radius: 0 0 30px 30px;
+                    }
+                }
+            }
+            .gnb_a{
+                font-size: 1.2rem;
+            }
+            .gnb_ul{
+                min-width: 10rem;
+                background-color: white;
+                margin-top: -1px;
+                border: 1px solid black;
+                border-top: 0;
+                border-bottom: 0;
+                border-radius: 0;
+                overflow: hidden;
+                //모든 소메뉴 대메뉴를 기준으로 정가운데로 엄마를 기준으로 절만만큼 왼쪽으로 가고 너의 몸을 기준으로 절반만큼 뒤로: 가운데 정렬
+                transform: translateX(-50%);
+                left: 50%;
+                //드롭애니메이션
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.5s;
+                transition-delay: 1s;
+                
+                li{
+                    padding: 0 1.5rem;
+                }
+
+    
+    
+                &:after,
+                &:before{
+                    content: "";
+                    display: block;
+                    height: 1rem;
+                }
+                &:after{
+                    border-bottom: 1px solid black;
+                    
+                    
+                }
+            }
+        }
+        
+    }
